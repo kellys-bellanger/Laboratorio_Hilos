@@ -29,7 +29,7 @@ public class PruebaConsola {
 
         System.out.println("\n------------");
 
-        // 2. PRUEBAS CON SYNCHRONIZED
+
         System.out.println("--- PRUEBA 2: CON SYNCHRONIZED (Esperado: 2000) ---");
         for (int i = 1; i <= 10; i++) {
             contador.reiniciar();
