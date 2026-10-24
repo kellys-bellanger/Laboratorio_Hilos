@@ -20,3 +20,15 @@ public class ContadorCompartido {
         return totalPrimitivo;
     }
 
+    public void incrementarAtomico() {
+        totalAtomico.incrementAndGet();
+    }
+
+    public int getTotalAtomico() {
+        return totalAtomico.get();
+    }
+    public synchronized void reiniciar() {
+        this.totalPrimitivo = 0;
+        this.totalAtomico.set(0);
+    }
+}
