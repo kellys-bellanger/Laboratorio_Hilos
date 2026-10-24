@@ -29,3 +29,47 @@ public class PruebaConsola {
 
         System.out.println("\n------------");
 
+        // 2. PRUEBAS CON SYNCHRONIZED
+        System.out.println("--- PRUEBA 2: CON SYNCHRONIZED (Esperado: 2000) ---");
+        for (int i = 1; i <= 10; i++) {
+            contador.reiniciar();
+
+            Thread h1 = new Thread(() -> {
+                for (int j = 0; j < 1000; j++) contador.incrementarSincronizado();
+            });
+            Thread h2 = new Thread(() -> {
+                for (int j = 0; j < 1000; j++) contador.incrementarSincronizado();
+            });
+
+            h1.start();
+            h2.start();
+
+            h1.join();
+            h2.join();
+
+            System.out.printf("Run %2d: Total = %d%n", i, contador.getTotalSincronizado());
+        }
+
+        System.out.println("\n-------------------------------------------------");
+
+        System.out.println("--- PRUEBA 3: CON ATOMICINTEGER (Esperado: 2000) ---");
+        for (int i = 1; i <= 10; i++) {
+            contador.reiniciar();
+
+            Thread h1 = new Thread(() -> {
+                for (int j = 0; j < 1000; j++) contador.incrementarAtomico();
+            });
+            Thread h2 = new Thread(() -> {
+                for (int j = 0; j < 1000; j++) contador.incrementarAtomico();
+            });
+
+            h1.start();
+            h2.start();
+
+            h1.join();
+            h2.join();
+
+            System.out.printf("Run %2d: Total = %d%n", i, contador.getTotalAtomico());
+        }
+    }
+}
