@@ -45,7 +45,7 @@ public class PruebaConsola {
             h2.start();
 
             h1.join();
-            h2.join();  
+            h2.join();
 
             System.out.printf("Run %2d: Total = %d%n", i, contador.getTotalSincronizado());
         }
