@@ -1,4 +1,6 @@
-package ni.edu.uam.laboratorio_hilos.tareas;
+package ni.edu.uam.laboratorio_hilos.app;
+
+import ni.edu.uam.laboratorio_hilos.tareas.ProcesoVentanilla;
 
 public class PruebaEstacion1 {
 
