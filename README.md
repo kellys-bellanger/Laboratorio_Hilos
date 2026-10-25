@@ -33,6 +33,11 @@ Todos los comandos se ejecutan dentro de la carpeta `Laboratorio_Hilos/`.
 En Windows (PowerShell) usar `.\mvnw.cmd clean javafx:run`. Desde IntelliJ también se puede ejecutar la clase
 `Launcher`.
 
+La ventana (Estación 5) tiene los botones **Iniciar** y **Detener**, el estado de la sesión, el contador de
+solicitudes completadas, el estado de cada ventanilla con su `Thread.State` y un área de registro. Las dos
+ventanillas trabajan en hilos propios (`SesionOficina` y `VentanillaOficina`); la vista se refresca cada 100 ms en
+el hilo de JavaFX y **Iniciar** solo se vuelve a habilitar cuando ambos hilos de la sesión anterior terminaron.
+
 ### Pruebas por consola
 
 Compilar primero con `./mvnw compile` y luego ejecutar la prueba de cada estación:
