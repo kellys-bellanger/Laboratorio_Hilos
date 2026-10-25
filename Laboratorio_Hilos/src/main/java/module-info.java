@@ -5,4 +5,5 @@ module ni.edu.uam.laboratorio_hilos {
 
     opens ni.edu.uam.laboratorio_hilos to javafx.fxml;
     exports ni.edu.uam.laboratorio_hilos;
+    exports ni.edu.uam.laboratorio_hilos.app;
 }

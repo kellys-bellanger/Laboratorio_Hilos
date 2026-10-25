@@ -1,3 +1,7 @@
+package ni.edu.uam.laboratorio_hilos.app;
+
+import ni.edu.uam.laboratorio_hilos.tareas.ContadorCompartido;
+
 public class PruebaConsola {
 
     public static void main(String[] args) throws InterruptedException {
