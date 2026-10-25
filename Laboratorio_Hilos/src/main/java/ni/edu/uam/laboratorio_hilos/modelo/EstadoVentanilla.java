@@ -15,4 +15,5 @@ public enum EstadoVentanilla {
 
     public String getEtiqueta() {
         return etiqueta;
-}}
+    }
+}
