@@ -3,6 +3,17 @@
 Laboratorio guiado de concurrencia en Java y JavaFX: una oficina procesa solicitudes desde dos ventanillas que
 actualizan un contador compartido, sin bloquear la interfaz y con cancelación cooperativa de los hilos.
 
+**CNU0525 · Programación de Aplicaciones de Escritorio · Grupo 1** · Profesor: José Durán García
+
+## Equipo
+
+| Integrante | Rol | Aporte principal | Rama |
+|---|---|---|---|
+| Daniella Rocha | Líder | Estación 5 (integración JavaFX), integración de ramas, pruebas JUnit, documentación | `feature/daniella` |
+| Kellys Bellanger | Integrante | Base del proyecto y Estación 1 (Thread y Runnable) | `feature/kellys` |
+| Nora Obregón | Integrante | Estaciones 2 (estados de hilos) y 4 (detención) | `feature/nora` |
+| Daris Mayorga | Integrante | Estación 3 (sincronización del contador) | `feature/daris` |
+
 ## Requisitos
 
 - JDK 21 (probado con Temurin 21)
@@ -17,7 +28,7 @@ El proyecto Maven está en la carpeta `Laboratorio_Hilos/`. El código está en
 | Paquete | Contenido |
 |---|---|
 | `app` | Aplicación JavaFX (`MainApp`) y programas de prueba por consola de cada estación |
-| `tareas` | Tareas que se ejecutan en hilos: `ProcesoVentanilla`, `VentanillaCancelable`, `MonitorEstados`, `ContadorCompartido` |
+| `tareas` | Tareas que se ejecutan en hilos: `ProcesoVentanilla`, `VentanillaCancelable`, `MonitorEstados`, `ContadorCompartido`, `VentanillaOficina` y `SesionOficina` |
 | `modelo` | `EstadoVentanilla`: En espera, Ejecutando, Deteniendo, Detenido y Finalizado |
 
 ## Cómo ejecutar
@@ -52,4 +63,19 @@ Compilar primero con `./mvnw compile` y luego ejecutar la prueba de cada estaci�
 java -cp target/classes ni.edu.uam.laboratorio_hilos.app.PruebaConsola
 ```
 
+`PruebaConsola` acepta los incrementos por hilo como argumento (por defecto 100 000). Con `1000`, como dice el
+enunciado, la condición de carrera aparece muy pocas veces.
+
 Desde IntelliJ basta con abrir la clase y ejecutar su método `main`.
+
+### Pruebas automáticas (JUnit 5)
+
+```bash
+./mvnw test
+```
+
+| Clase de prueba | Qué verifica |
+|---|---|
+| `ContadorCompartidoTest` | `synchronized` y `AtomicInteger` no pierden conteos con dos hilos (10 repeticiones cada uno) |
+| `VentanillaOficinaTest` | Estados de la ventanilla y cancelación cooperativa: `detener()` interrumpe el `sleep()` y el hilo termina solo |
+| `SesionOficinaTest` | Las dos ventanillas cuentan sin pérdidas, se detienen juntas y el aviso de fin llega sin hilos vivos |
