@@ -1,3 +1,5 @@
+package ni.edu.uam.laboratorio_hilos.tareas;
+
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ContadorCompartido {
