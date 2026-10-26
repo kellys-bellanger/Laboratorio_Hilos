@@ -1,0 +1,204 @@
+/* Paleta: neutros cálidos con un solo acento rosa suave */
+.root {
+    -fondo: #faf9f7;
+    -superficie: #ffffff;
+    -borde: #ebe7e2;
+    -texto: #2b2724;
+    -texto-suave: #8a827a;
+    -acento: #c9637e;
+    -acento-oscuro: #b04f6a;
+    -acento-claro: #f6e7eb;
+
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: -fondo;
+}
+
+/* Encabezado */
+.encabezado {
+    -fx-background-color: -superficie;
+    -fx-border-color: transparent transparent -borde transparent;
+    -fx-padding: 20 28 18 28;
+    -fx-alignment: center-left;
+}
+
+.titulo {
+    -fx-font-size: 19px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -texto;
+}
+
+.subtitulo {
+    -fx-font-size: 12px;
+    -fx-text-fill: -texto-suave;
+}
+
+.contenido {
+    -fx-padding: 24 28 28 28;
+    -fx-spacing: 18;
+}
+
+/* Botones */
+.boton {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 24 8 24;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-cursor: hand;
+}
+
+.boton-iniciar {
+    -fx-background-color: -acento;
+    -fx-text-fill: white;
+}
+
+.boton-iniciar:hover {
+    -fx-background-color: -acento-oscuro;
+}
+
+.boton-detener {
+    -fx-background-color: transparent;
+    -fx-border-color: -borde;
+    -fx-text-fill: -texto;
+}
+
+.boton-detener:hover {
+    -fx-background-color: -superficie;
+    -fx-border-color: -texto-suave;
+}
+
+.boton:disabled {
+    -fx-opacity: 0.35;
+}
+
+/* Tarjetas */
+.tarjeta {
+    -fx-background-color: -superficie;
+    -fx-background-radius: 14;
+    -fx-border-color: -borde;
+    -fx-border-radius: 14;
+    -fx-padding: 16 18 16 18;
+    -fx-spacing: 10;
+}
+
+.tarjeta-titulo {
+    -fx-font-size: 11px;
+    -fx-text-fill: -texto-suave;
+}
+
+.contador-valor {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -texto;
+}
+
+.contador-total {
+    -fx-text-fill: -texto-suave;
+}
+
+.detalle-hilo {
+    -fx-font-family: "Consolas", monospace;
+    -fx-font-size: 11px;
+    -fx-text-fill: -texto-suave;
+}
+
+.progress-bar {
+    -fx-pref-height: 6px;
+}
+
+.progress-bar > .track {
+    -fx-background-color: -acento-claro;
+    -fx-background-radius: 3;
+    -fx-background-insets: 0;
+}
+
+.progress-bar > .bar {
+    -fx-background-color: -acento;
+    -fx-background-radius: 3;
+    -fx-background-insets: 0;
+    -fx-padding: 3;
+}
+
+/* Insignias de estado: tonos pastel apagados */
+.insignia {
+    -fx-font-size: 12px;
+    -fx-padding: 3 12 3 12;
+    -fx-background-radius: 20;
+}
+
+.estado-en-espera {
+    -fx-background-color: #f1eeea;
+    -fx-text-fill: #7a7169;
+}
+
+.estado-ejecutando {
+    -fx-background-color: #e6eef5;
+    -fx-text-fill: #4b6b8a;
+}
+
+.estado-deteniendo {
+    -fx-background-color: #f8eedc;
+    -fx-text-fill: #9a7330;
+}
+
+.estado-detenido {
+    -fx-background-color: -acento-claro;
+    -fx-text-fill: -acento-oscuro;
+}
+
+.estado-finalizado {
+    -fx-background-color: #e5f0e8;
+    -fx-text-fill: #4d7a5b;
+}
+
+/* Registro */
+.seccion-titulo {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -texto;
+}
+
+.registro {
+    -fx-font-family: "Consolas", monospace;
+    -fx-font-size: 12px;
+    -fx-text-fill: #5c544d;
+    -fx-background-color: -superficie;
+    -fx-background-radius: 14;
+    -fx-border-color: -borde;
+    -fx-border-radius: 14;
+    -fx-highlight-fill: -acento-claro;
+    -fx-highlight-text-fill: -texto;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.registro .content {
+    -fx-background-color: transparent;
+    -fx-padding: 10 12 10 12;
+}
+
+.registro .scroll-pane,
+.registro .viewport {
+    -fx-background-color: transparent;
+}
+
+.registro .scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.registro .scroll-bar .thumb {
+    -fx-background-color: -borde;
+    -fx-background-radius: 4;
+}
+
+.registro .scroll-bar .increment-button,
+.registro .scroll-bar .decrement-button {
+    -fx-padding: 0;
+}
+
+.registro .scroll-bar .increment-arrow,
+.registro .scroll-bar .decrement-arrow {
+    -fx-shape: " ";
+    -fx-padding: 0;
+}
